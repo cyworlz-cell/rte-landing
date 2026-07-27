@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Road to Elite 7기 안내</title>
+  <title>Road to Elite 8기 안내</title>
+
   <style>
     :root{
       --muted:#6b7280;
@@ -13,290 +14,367 @@
       --primary-2:#7c3aed;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
+
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, sans-serif;
-      background: linear-gradient(180deg,#08101f 0%, #0b1220 55%, #0b1220 100%);
+      font-family:system-ui, -apple-system, Segoe UI, Roboto,
+        "Noto Sans KR", Arial, sans-serif;
+      background:linear-gradient(
+        180deg,
+        #08101f 0%,
+        #0b1220 55%,
+        #0b1220 100%
+      );
       color:#0f172a;
     }
 
     .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 24px 16px 56px;
+      max-width:980px;
+      margin:0 auto;
+      padding:24px 16px 56px;
     }
 
+    /* 상단 영역 */
     .hero{
-      border-radius: 20px;
-      overflow:hidden;
-      background: linear-gradient(135deg, #5b2ca3 0%, #2d4bd6 55%, #0ea5b7 110%);
-      color:#fff;
-      min-height: 280px;
+      min-height:280px;
       display:flex;
       align-items:flex-end;
       position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      color:#fff;
+      background:linear-gradient(
+        135deg,
+        #5b2ca3 0%,
+        #2d4bd6 55%,
+        #0ea5b7 110%
+      );
     }
+
     .hero:before{
       content:"";
       position:absolute;
       inset:-40px;
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.18), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,.12), transparent 45%),
-        radial-gradient(circle at 60% 85%, rgba(255,255,255,.10), transparent 45%);
-      filter: blur(2px);
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(255,255,255,.18),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(255,255,255,.12),
+          transparent 45%
+        ),
+        radial-gradient(
+          circle at 60% 85%,
+          rgba(255,255,255,.10),
+          transparent 45%
+        );
+      filter:blur(2px);
       opacity:.9;
       pointer-events:none;
     }
+
     .hero__inner{
-      padding: 22px 22px 26px;
       width:100%;
       position:relative;
       z-index:1;
+      padding:22px 22px 26px;
     }
+
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
-      opacity:.96;
       font-weight:800;
       letter-spacing:.2px;
+      opacity:.96;
     }
+
     .brand small{
       display:block;
       font-weight:500;
       opacity:.9;
     }
+
     .headline{
-      margin: 14px 0 6px;
-      font-size: clamp(22px, 3.5vw, 34px);
+      margin:14px 0 6px;
+      font-size:clamp(22px, 3.5vw, 34px);
       line-height:1.15;
       font-weight:900;
     }
+
     .subline{
+      max-width:70ch;
       margin:0;
-      font-size: 14px;
-      opacity:.95;
+      font-size:14px;
       line-height:1.6;
-      max-width: 70ch;
+      opacity:.95;
     }
+
     .ctaRow{
-      margin-top: 14px;
+      margin-top:14px;
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
       align-items:center;
+      gap:10px;
     }
+
     .chip{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.18);
-      font-size: 13px;
-      backdrop-filter: blur(6px);
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      background:rgba(255,255,255,.14);
+      font-size:13px;
+      backdrop-filter:blur(6px);
     }
-    .chip b{font-weight:900}
 
+    .chip b{
+      font-weight:900;
+    }
+
+    /* 신청하기 버튼 */
     .btnApply{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding: 12px 16px;
-      border-radius: 14px;
-      background: linear-gradient(90deg, #ff2d55, #ff7a18);
+      position:relative;
+      padding:12px 16px;
+      border:0;
+      border-radius:14px;
       color:#fff;
-      border: 0;
+      background:linear-gradient(90deg, #ff2d55, #ff7a18);
       font-weight:900;
       text-decoration:none;
       white-space:nowrap;
-      box-shadow: 0 14px 28px rgba(0,0,0,.28);
-      position:relative;
-      transform: translateY(0);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      box-shadow:0 14px 28px rgba(0,0,0,.28);
+      transition:
+        transform .15s ease,
+        box-shadow .15s ease,
+        filter .15s ease;
     }
+
     .btnApply:before{
       content:"";
       position:absolute;
       inset:-2px;
-      border-radius: 16px;
-      background: linear-gradient(90deg, rgba(255,255,255,.35), rgba(255,255,255,0));
+      border-radius:16px;
+      background:linear-gradient(
+        90deg,
+        rgba(255,255,255,.35),
+        rgba(255,255,255,0)
+      );
       opacity:.45;
       pointer-events:none;
-      filter: blur(6px);
-    }
-    .btnApply:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-      box-shadow: 0 18px 34px rgba(0,0,0,.34);
-    }
-    .btnApply:active{
-      transform: translateY(0px);
-      box-shadow: 0 12px 26px rgba(0,0,0,.26);
+      filter:blur(6px);
     }
 
+    .btnApply:hover{
+      transform:translateY(-1px);
+      filter:brightness(1.03);
+      box-shadow:0 18px 34px rgba(0,0,0,.34);
+    }
+
+    .btnApply:active{
+      transform:translateY(0);
+      box-shadow:0 12px 26px rgba(0,0,0,.26);
+    }
+
+    /* 공통 카드 */
     .card{
-      background: rgba(255,255,255,.96);
-      border: 1px solid rgba(255,255,255,.18);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+      padding:18px;
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:18px;
+      background:rgba(255,255,255,.96);
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
     }
 
     .grid{
-      margin-top: 18px;
+      margin-top:18px;
       display:grid;
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
       gap:14px;
     }
-    @media (min-width: 860px){
+
+    @media (min-width:860px){
       .grid{
-        grid-template-columns: 1.05fr .95fr;
+        grid-template-columns:1.05fr .95fr;
         gap:16px;
       }
     }
 
     h2{
       margin:0 0 10px;
-      font-size: 18px;
+      font-size:18px;
       letter-spacing:-.2px;
     }
+
     .metaLine{
       margin:0 0 12px;
-      color: var(--muted);
-      font-size: 13px;
+      color:var(--muted);
+      font-size:13px;
       line-height:1.55;
     }
 
     .section{
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:14px;
       background:#fff;
     }
 
+    /* 체크 리스트 */
     .klist{
-      margin: 0;
-      padding-left: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    .klist li{
-      display: grid;
-      grid-template-columns: 22px 1fr;
-      gap: 10px;
-      align-items: start;
-      line-height: 1.6;
-      color: #111827;
-    }
-    .check{
-      width: 22px;
-      height: 22px;
-      border-radius: 7px;
-      border: 2px solid #93c5fd;
-      display: grid;
-      place-items: center;
-      background: var(--chip);
-      margin-top: 2px;
-    }
-    .check:before{
-      content: "✓";
-      font-weight: 900;
-      font-size: 14px;
-      color: #1d4ed8;
-      transform: translateY(-.5px);
-    }
-    .klist li span:last-child{
-      word-break: keep-all;
-      overflow-wrap: anywhere;
+      margin:0;
+      padding-left:0;
+      display:grid;
+      gap:12px;
+      list-style:none;
     }
 
+    .klist li{
+      display:grid;
+      grid-template-columns:22px 1fr;
+      align-items:start;
+      gap:10px;
+      color:#111827;
+      line-height:1.6;
+    }
+
+    .check{
+      width:22px;
+      height:22px;
+      display:grid;
+      place-items:center;
+      margin-top:2px;
+      border:2px solid #93c5fd;
+      border-radius:7px;
+      background:var(--chip);
+    }
+
+    .check:before{
+      content:"✓";
+      color:#1d4ed8;
+      font-size:14px;
+      font-weight:900;
+      transform:translateY(-.5px);
+    }
+
+    .klist li span:last-child{
+      word-break:keep-all;
+      overflow-wrap:anywhere;
+    }
+
+    /* 점수표 */
     .tableWrap{
       overflow:auto;
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
       background:#fff;
     }
+
     table{
       width:100%;
+      min-width:560px;
       border-collapse:collapse;
-      min-width: 560px;
     }
-    th,td{
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--line);
+
+    th,
+    td{
+      padding:10px 12px;
+      border-bottom:1px solid var(--line);
       vertical-align:top;
-      font-size: 13px;
+      font-size:13px;
       line-height:1.4;
     }
+
     th{
-      text-align:left;
-      background:#f8fafc;
-      font-weight:900;
-      color:#0f172a;
       position:sticky;
       top:0;
       z-index:1;
+      text-align:left;
+      background:#f8fafc;
+      color:#0f172a;
+      font-weight:900;
     }
-    tr:last-child td{border-bottom:none}
+
+    tr:last-child td{
+      border-bottom:none;
+    }
+
     .badge{
       display:inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background:#f1f5f9;
+      padding:2px 8px;
       border:1px solid #e2e8f0;
-      font-size:12px;
+      border-radius:999px;
+      background:#f1f5f9;
       color:#334155;
+      font-size:12px;
       font-weight:800;
     }
 
-    .benefits{ margin-top: 16px; }
+    /* 혜택 */
+    .benefits{
+      margin-top:16px;
+    }
+
     .benefitsGrid{
       display:grid;
-      grid-template-columns: 1fr;
+      grid-template-columns:1fr;
       gap:12px;
     }
-    @media (min-width: 640px){
-      .benefitsGrid{ grid-template-columns: 1fr 1fr; }
+
+    @media (min-width:640px){
+      .benefitsGrid{
+        grid-template-columns:1fr 1fr;
+      }
     }
+
     .benefit{
       display:flex;
-      gap:12px;
-      padding: 14px;
-      border-radius: 16px;
-      border:1px solid var(--line);
-      background:#fff;
       align-items:flex-start;
+      gap:12px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
     }
+
     .icon{
-      width:44px;height:44px;
-      border-radius: 14px;
-      background: linear-gradient(180deg,#eff6ff,#ffffff);
-      border:1px solid #dbeafe;
+      width:44px;
+      height:44px;
       display:grid;
       place-items:center;
+      border:1px solid #dbeafe;
+      border-radius:14px;
+      background:linear-gradient(180deg, #eff6ff, #ffffff);
       font-size:20px;
     }
+
     .benefit h3{
       margin:0 0 4px;
       font-size:15px;
       letter-spacing:-.2px;
     }
+
     .benefit p{
       margin:0;
-      color: var(--muted);
-      font-size: 13px;
+      color:var(--muted);
+      font-size:13px;
       line-height:1.45;
     }
 
     footer{
-      margin-top: 18px;
-      color: rgba(255,255,255,.75);
-      font-size: 12px;
+      margin-top:18px;
+      color:rgba(255,255,255,.75);
+      font-size:12px;
       text-align:center;
     }
   </style>
@@ -304,68 +382,147 @@
 
 <body>
   <div class="wrap">
-    <!-- HERO -->
+
+    <!-- 상단 영역 -->
     <header class="hero" role="banner">
       <div class="hero__inner">
+
         <div class="brand">
-          <div style="width:12px;height:12px;border-radius:999px;background:#a78bfa;"></div>
+          <div
+            style="
+              width:12px;
+              height:12px;
+              border-radius:999px;
+              background:#a78bfa;
+            "
+          ></div>
+
           <div>
             Road to Elite
             <small>doTERRA | KOREA</small>
           </div>
         </div>
 
-        <!-- ✅ 상단 내용 수정 (7기) -->
-        <div class="headline">7기 신청기간 6월 1일 ~ 6월 30일</div>
+        <div class="headline">
+          8기 신청기간 8월 1일 ~ 8월 31일
+        </div>
+
         <p class="subline">
-          도전기간 : 26년 7월 1일 ~ 8월 30일<br/>
+          도전기간 : 26년 9월 1일 ~ 10월 31일<br />
           목표 : New Elite 달성, 신규추천 2명, 클래스 2회
         </p>
 
         <div class="ctaRow">
-          <span class="chip"><b>도전기간</b> 26년 7월 1일 ~ 8월 30일</span>
-          <span class="chip"><b>핵심목표</b> New Elite 달성 · 신규추천 2명 · 클래스 2회</span>
 
-          <!-- ✅ 신청 링크 수정 -->
-          <a class="btnApply" href="https://mastersclub.doterra.com/s/" target="_blank" rel="noopener noreferrer">
-            🚀 7기 신청하기
+          <span class="chip">
+            <b>도전기간</b>
+            26년 9월 1일 ~ 10월 31일
+          </span>
+
+          <span class="chip">
+            <b>핵심목표</b>
+            New Elite 달성 · 신규추천 2명 · 클래스 2회
+          </span>
+
+          <a
+            class="btnApply"
+            href="https://mastersclub.doterra.com/s/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🚀 8기 신청하기
           </a>
+
         </div>
       </div>
     </header>
 
-    <!-- MAIN -->
+    <!-- 프로그램 안내 및 점수표 -->
     <main class="grid" id="detail">
-      <!-- LEFT -->
+
+      <!-- 프로그램 안내 -->
       <section class="card">
         <h2>프로그램 안내</h2>
-        <p class="metaLine">참가 대상과 수료조건을 확인하고, 60일 실행 플랜을 구체적으로 만들어보세요.</p>
+
+        <p class="metaLine">
+          참가 대상과 수료조건을 확인하고,
+          60일 실행 플랜을 구체적으로 만들어보세요.
+        </p>
 
         <div class="section" style="margin-bottom:12px;">
-          <h2 style="margin:0 0 10px;">참가 대상</h2>
+          <h2 style="margin:0 0 10px;">
+            참가 대상
+          </h2>
+
           <ul class="klist">
-            <li><span class="check" aria-hidden="true"></span><span>엘리트 직급을 목표로 하는 도테라 IPC 회원</span></li>
-            <li><span class="check" aria-hidden="true"></span><span>재가입 회원 포함, 다시 한번 집중해서 도전하고 싶은 분</span></li>
-            <li><span class="check" aria-hidden="true"></span><span>혼자보다 시스템 안에서 실행하고 성장의 흐름을 만들고 싶은 분</span></li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                엘리트 직급을 목표로 하는 도테라 IPC 회원
+              </span>
+            </li>
+
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                재가입 회원 포함, 다시 한번 집중해서 도전하고 싶은 분
+              </span>
+            </li>
+
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                혼자보다 시스템 안에서 실행하고
+                성장의 흐름을 만들고 싶은 분
+              </span>
+            </li>
           </ul>
         </div>
 
         <div class="section">
-          <h2 style="margin:0 0 10px;">수료조건</h2>
+          <h2 style="margin:0 0 10px;">
+            수료조건
+          </h2>
+
           <ul class="klist">
-            <li><span class="check" aria-hidden="true"></span><span>도전기간 내 <b>New Elite</b> 직급 달성</span></li>
-            <li><span class="check" aria-hidden="true"></span><span>도전기간 내 <b>신규 회원 2명 추천</b></span></li>
-            <li><span class="check" aria-hidden="true"></span><span>도전기간 내 <b>클래스 2회 운영</b></span></li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                도전기간 내 <b>New Elite</b> 직급 달성
+              </span>
+            </li>
+
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                도전기간 내 <b>신규 회원 2명 추천</b>
+              </span>
+            </li>
+
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <span>
+                도전기간 내 <b>클래스 2회 운영</b>
+              </span>
+            </li>
           </ul>
         </div>
       </section>
 
-      <!-- RIGHT -->
+      <!-- 점수 획득 방법 -->
       <section class="card">
         <h2>점수 획득 방법</h2>
-        <p class="metaLine">아래 기준에 따라 점수를 획득하며, 세부 운영 기준은 진행안에 따라 일부 조정될 수 있습니다.</p>
 
-        <div class="tableWrap" role="region" aria-label="점수 획득 방법 표">
+        <p class="metaLine">
+          아래 기준에 따라 점수를 획득하며,
+          세부 운영 기준은 진행안에 따라 일부 조정될 수 있습니다.
+        </p>
+
+        <div
+          class="tableWrap"
+          role="region"
+          aria-label="점수 획득 방법 표"
+        >
           <table>
             <thead>
               <tr>
@@ -374,107 +531,170 @@
                 <th>내용</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
-                <td rowspan="4"><span class="badge">신규 등록</span></td>
+                <td rowspan="4">
+                  <span class="badge">신규 등록</span>
+                </td>
                 <td>2</td>
                 <td>100~199PV 등록 주문 발생 시</td>
               </tr>
+
               <tr>
                 <td>3</td>
                 <td>200~299PV 등록 주문 발생 시</td>
               </tr>
+
               <tr>
                 <td>5</td>
                 <td>400PV 이상 등록 주문 발생 시</td>
               </tr>
+
               <tr>
                 <td>3</td>
-                <td>신규 회원이 추천한 첫 번째 신규 등록 발생 시 (100PV 이상)</td>
+                <td>
+                  신규 회원이 추천한 첫 번째 신규 등록 발생 시
+                  (100PV 이상)
+                </td>
               </tr>
 
               <tr>
-                <td><span class="badge">회원유형 전환</span></td>
+                <td>
+                  <span class="badge">회원유형 전환</span>
+                </td>
                 <td>1</td>
                 <td>우수회원에서 IPC 회원으로 전환 시</td>
               </tr>
 
               <tr>
-                <td rowspan="2"><span class="badge">직급 달성</span></td>
+                <td rowspan="2">
+                  <span class="badge">직급 달성</span>
+                </td>
                 <td>30</td>
-                <td>RTE 도전 시작 후 60일 이내 New Elite 달성</td>
-              </tr>
-              <tr>
-                <td>40</td>
-                <td>RTE 도전 시작 후 30일 이내 New Elite 달성</td>
+                <td>
+                  RTE 도전 시작 후 60일 이내 New Elite 달성
+                </td>
               </tr>
 
               <tr>
-                <td rowspan="4"><span class="badge">신규 등록 회원 직급</span></td>
-                <td>5</td>
-                <td>도전기간 내 신규 등록 회원의 매니저 달성</td>
+                <td>40</td>
+                <td>
+                  RTE 도전 시작 후 30일 이내 New Elite 달성
+                </td>
               </tr>
+
+              <tr>
+                <td rowspan="4">
+                  <span class="badge">
+                    신규 등록 회원 직급
+                  </span>
+                </td>
+                <td>5</td>
+                <td>
+                  도전기간 내 신규 등록 회원의 매니저 달성
+                </td>
+              </tr>
+
               <tr>
                 <td>10</td>
-                <td>도전기간 내 신규 등록 회원의 디렉터 달성</td>
+                <td>
+                  도전기간 내 신규 등록 회원의 디렉터 달성
+                </td>
               </tr>
+
               <tr>
                 <td>20</td>
-                <td>도전기간 내 신규 등록 회원의 이그제큐티브 달성</td>
+                <td>
+                  도전기간 내 신규 등록 회원의 이그제큐티브 달성
+                </td>
               </tr>
+
               <tr>
                 <td>30</td>
-                <td>도전기간 내 신규 등록 회원의 엘리트 달성</td>
+                <td>
+                  도전기간 내 신규 등록 회원의 엘리트 달성
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
+
     </main>
 
-    <!-- BENEFITS -->
+    <!-- 혜택 및 시상 -->
     <section class="card benefits">
       <h2>혜택 및 시상</h2>
-      <p class="metaLine">참여와 수료, 그리고 우수한 성과에 따라 아래와 같은 혜택이 제공됩니다.</p>
+
+      <p class="metaLine">
+        참여와 수료, 그리고 우수한 성과에 따라
+        아래와 같은 혜택이 제공됩니다.
+      </p>
 
       <div class="benefitsGrid">
+
         <div class="benefit">
-          <div class="icon" aria-hidden="true">🍊</div>
+          <div class="icon" aria-hidden="true">
+            🍊
+          </div>
+
           <div>
             <h3>신규 회원 혜택</h3>
-            <p>신규 회원 오일 증정 <b>(125PV부터 적용)</b></p>
+            <p>
+              신규 회원 오일 증정
+              <b>(125PV부터 적용)</b>
+            </p>
           </div>
         </div>
 
         <div class="benefit">
-          <div class="icon" aria-hidden="true">🎁</div>
+          <div class="icon" aria-hidden="true">
+            🎁
+          </div>
+
           <div>
             <h3>수료자 혜택</h3>
-            <p>도전 완주자를 위한 수료 선물 증정</p>
+            <p>
+              도전 완주자를 위한 수료 선물 증정
+            </p>
           </div>
         </div>
 
         <div class="benefit">
-          <div class="icon" aria-hidden="true">🎟️</div>
+          <div class="icon" aria-hidden="true">
+            🎟️
+          </div>
+
           <div>
             <h3>추가 참여 혜택</h3>
-            <p>수료자 대상 엘리트 트레이닝 참석 티켓 증정</p>
+            <p>
+              수료자 대상 엘리트 트레이닝 참석 티켓 증정
+            </p>
           </div>
         </div>
 
         <div class="benefit">
-          <div class="icon" aria-hidden="true">🏝️</div>
+          <div class="icon" aria-hidden="true">
+            🏝️
+          </div>
+
           <div>
             <h3>성적 우수자 혜택</h3>
-            <p>1위: LRH 전액 지원 / 2위: LRH 부분 지원</p>
+            <p>
+              1위: LRH 전액 지원 /
+              2위: LRH 부분 지원
+            </p>
           </div>
         </div>
+
       </div>
     </section>
 
     <footer>
-      © doTERRA | KOREA · Road to Elite 6기 안내 페이지
+      © doTERRA | KOREA · Road to Elite 8기 안내 페이지
     </footer>
+
   </div>
 </body>
 </html>
